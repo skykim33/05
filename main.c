@@ -2,39 +2,28 @@
 
 int main()
 {
-    int a, b;
-    char operator;
-    
-    printf("enter the calculation : ");
-    scanf("%d %c %d", &a, &operator, &b);
+    int answer = 39;
+    int guess;
+    int trial = 0;
 
-    if (operator == '+')
+    do
     {
-        printf("the result is %d\n", a + b);
-    }
-    else if (operator == '-')
-    {
-        printf("the result is %d\n", a- b);
-    }
-    else if (operator == '*')
-    {
-        printf("the result is %d\n", a * b);
-    }
-    else if (operator == '/')
-    {
-        if (b != 0)
+        printf("Guess a number: ");
+        scanf("%d", &guess);
+        
+        if (guess < answer)
         {
-            printf("the result is %d\n", a / b);
+            printf("low!\n");
         }
-        else
+        else if (guess > answer)
         {
-            printf("Error: Division by zero is not allowed.\n");
+            printf("high!\n");
         }
-    }
-    else
-    {
-        printf("Error: Invalid operator.\n");
-    }
-    
+
+        trial++;
+    } while (guess != answer);
+
+    printf("Congratulations! trials: %d\n", trial);
+
     return 0;
 }
