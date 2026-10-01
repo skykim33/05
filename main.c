@@ -2,19 +2,39 @@
 
 int main()
 {
-    int num;
-    int sum = 0;
+    int a, b;
+    char operator;
     
-    printf("input a number:");
-    scanf("%d", &num);
+    printf("enter the calculation : ");
+    scanf("%d %c %d", &a, &operator, &b);
 
-    int i;
-    for (i = 1; i <= num; i++)
+    if (operator == '+')
     {
-        sum += i;
+        printf("the result is %d\n", a + b);
     }
-
-    printf("the result is %d\n", sum);
-
+    else if (operator == '-')
+    {
+        printf("the result is %d\n", a- b);
+    }
+    else if (operator == '*')
+    {
+        printf("the result is %d\n", a * b);
+    }
+    else if (operator == '/')
+    {
+        if (b != 0)
+        {
+            printf("the result is %d\n", a / b);
+        }
+        else
+        {
+            printf("Error: Division by zero is not allowed.\n");
+        }
+    }
+    else
+    {
+        printf("Error: Invalid operator.\n");
+    }
+    
     return 0;
 }
